@@ -1,3 +1,4 @@
 github "reactivecocoa/reactivecocoa" "v4.1.0"
+github "SwiftyJSON/SwiftyJSON" "2.3.3"
 github "exchangegroup/keychain-swift" "3.0.13"
 
