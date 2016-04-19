@@ -22,21 +22,25 @@ class OnboardingWindowController: NSWindowController {
     @IBOutlet weak var privateTokenField: NSTextField!
     @IBOutlet weak var authenticateButton: NSButton!
 
-    let action = Action<(NSURL?, String), Client, OnboardingError> { input in
-        guard let url = input.0 else { return SignalProducer(error: OnboardingError.InvalidEndpoint) }
-
-        let client = Client(provider: TokenAuthentication(token: input.1), endpoint: url)
-        return SignalProducer(value: client)
-    }
-
     var cocoaAction: CocoaAction?
+    let viewModel: OnboardingViewModel
+
+    init(viewModel: OnboardingViewModel) {
+        self.viewModel = viewModel
+
+        super.init(window: nil)
+
+        NSBundle.mainBundle().loadNibNamed("OnboardingWindowController", owner: self, topLevelObjects: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func loadWindow() {
         super.loadWindow()
 
-        action.events.observeNext { print($0) }
-
-        cocoaAction = CocoaAction(action) { [unowned self] input in
+        cocoaAction = CocoaAction(viewModel.action) { [unowned self] input in
             let url = NSURL(string: self.installationField.stringValue)
             return (url, self.privateTokenField.stringValue)
         }

@@ -18,14 +18,14 @@
         <window title="Onboarding" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="480" height="135"/>
+            <rect key="contentRect" x="196" y="240" width="480" height="208"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="135"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="208"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="21i-Zg-B72">
-                        <rect key="frame" x="20" y="20" width="95" height="95"/>
+                        <rect key="frame" x="20" y="93" width="95" height="95"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="95" id="mag-Cd-2YW"/>
                             <constraint firstAttribute="width" constant="95" id="wa7-nl-B2c"/>
@@ -33,7 +33,7 @@
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="logo" id="Ulr-ig-wIT"/>
                     </imageView>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sLC-D9-4S4">
-                        <rect key="frame" x="133" y="93" width="327" height="22"/>
+                        <rect key="frame" x="133" y="83" width="327" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="https://batcave.gitlab.com" drawsBackground="YES" id="H1K-yn-xgn">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -41,7 +41,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kSh-XZ-BaV">
-                        <rect key="frame" x="133" y="61" width="327" height="22"/>
+                        <rect key="frame" x="133" y="51" width="327" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Private token" drawsBackground="YES" id="5yw-GO-SNW">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -49,23 +49,34 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cWw-8u-uzB">
-                        <rect key="frame" x="349" y="23" width="117" height="32"/>
+                        <rect key="frame" x="349" y="13" width="117" height="32"/>
                         <buttonCell key="cell" type="push" title="Authenticate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OT5-wu-xXK">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="8fk-21-NeU">
+                        <rect key="frame" x="131" y="120" width="331" height="68"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="9Do-Q8-vZ9">
+                            <font key="font" metaFont="system"/>
+                            <string key="title">Welcome to Bailiff. Before we start, please enter the URL of your gitlab installation and your private key. You'll find your key in the account section of your profile settings.</string>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="8fk-21-NeU" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="0nR-Id-RQK"/>
+                    <constraint firstAttribute="trailing" secondItem="8fk-21-NeU" secondAttribute="trailing" constant="20" id="6oI-vH-if4"/>
+                    <constraint firstItem="8fk-21-NeU" firstAttribute="leading" secondItem="21i-Zg-B72" secondAttribute="trailing" constant="18" id="92i-jr-zjZ"/>
                     <constraint firstItem="21i-Zg-B72" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="J6B-Ka-xWV"/>
                     <constraint firstItem="cWw-8u-uzB" firstAttribute="top" secondItem="kSh-XZ-BaV" secondAttribute="bottom" constant="10" id="b98-pt-UNy"/>
                     <constraint firstAttribute="trailing" secondItem="sLC-D9-4S4" secondAttribute="trailing" constant="20" id="hHG-BA-Nvi"/>
+                    <constraint firstAttribute="bottom" secondItem="cWw-8u-uzB" secondAttribute="bottom" constant="20" id="l4f-cS-Lju"/>
                     <constraint firstItem="sLC-D9-4S4" firstAttribute="leading" secondItem="21i-Zg-B72" secondAttribute="trailing" constant="18" id="mKm-pv-pU4"/>
                     <constraint firstItem="cWw-8u-uzB" firstAttribute="trailing" secondItem="kSh-XZ-BaV" secondAttribute="trailing" id="qEN-fV-Dz1"/>
                     <constraint firstAttribute="trailing" secondItem="kSh-XZ-BaV" secondAttribute="trailing" constant="20" id="qrk-gP-G1U"/>
                     <constraint firstItem="21i-Zg-B72" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="vzU-GA-5jS"/>
-                    <constraint firstAttribute="bottom" secondItem="21i-Zg-B72" secondAttribute="bottom" constant="20" id="x5M-OK-ZSk"/>
-                    <constraint firstItem="sLC-D9-4S4" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="xOc-tq-zVa"/>
                     <constraint firstItem="kSh-XZ-BaV" firstAttribute="leading" secondItem="21i-Zg-B72" secondAttribute="trailing" constant="18" id="xPb-CY-l8i"/>
                     <constraint firstItem="kSh-XZ-BaV" firstAttribute="top" secondItem="sLC-D9-4S4" secondAttribute="bottom" constant="10" id="yE9-JN-P71"/>
                 </constraints>
@@ -73,7 +84,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="416" y="270.5"/>
+            <point key="canvasLocation" x="416" y="307"/>
         </window>
     </objects>
     <resources>

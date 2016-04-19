@@ -14,7 +14,6 @@ import Result
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    private let onboardingWindowController = OnboardingWindowController(windowNibName: "OnboardingWindowController")
 
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var projectsContainer: NSComboBox!
@@ -24,19 +23,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     private var client: Client?
 
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
-        onboardingWindowController.loadWindow()
-        onboardingWindowController.showWindow("coucou")
-        onboardingWindowController.window?.makeKeyAndOrderFront(self)
+    private let mainFlow = ApplicationFlow()
 
-        onboardingWindowController.action.values
-            .observeOn(UIScheduler())
-            .promoteErrors(ClientError)
-            .on(next: { self.client = $0 })
-            .observeNext { [unowned self] client in
-                self.client = client
-                self.boot()
-            }
+    func applicationDidFinishLaunching(aNotification: NSNotification) {
+        mainFlow.start()
+        print(mainFlow)
     }
 
     func boot() {
