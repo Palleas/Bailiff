@@ -43,9 +43,13 @@ class CreateIssueWindowController: NSWindowController {
             .projects()
             .collect()
             .observeOn(UIScheduler())
-            .on(failed: { print("Error: \($0)")})
+            .on(failed: { error in
+                switch error {
+                case .InternalError(let error):
+                    NSApp.presentError(error)
+                }
+            })
             .startWithNext() { [weak self] projects in
-                print("Loaded \(projects) | self: \(self)")
                 self?.projects = projects
                 self?.projectsContainer.reloadData()
             }
@@ -67,9 +71,24 @@ class CreateIssueWindowController: NSWindowController {
         let title = lines.first!
         let description = lines[1..<lines.count].joinWithSeparator("\n")
 
-        client.createIssue(projects[selectedProject], title: title, description: description).startWithNext { createdIssue in
-            print("Created issue #\(createdIssue.iid)")
-        }
+        client
+            .createIssue(projects[selectedProject], title: title, description: description)
+            .observeOn(UIScheduler())
+            .on(failed: { error in
+                switch error {
+                case .InternalError(let error):
+                    NSApp.presentError(error)
+                }
+            })
+            .startWithNext { [weak self] createdIssue in
+                guard let window = self?.window else { return }
+
+                let alert = NSAlert()
+                alert.alertStyle = .InformationalAlertStyle
+                alert.informativeText = "Issue #\(createdIssue.iid) has been successfully created!"
+                alert.addButtonWithTitle("OK")
+                alert.beginSheetModalForWindow(window, completionHandler: nil)
+            }
     }
 }
 

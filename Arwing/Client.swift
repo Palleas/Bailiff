@@ -88,7 +88,6 @@ public class Client: NSObject {
                 
                 return SignalProducer(values: payload)
             }
-
     }
 
     public func createIssue(project: Project, title: String, description: String) -> SignalProducer<Issue, ClientError> {
