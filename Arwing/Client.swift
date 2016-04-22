@@ -57,7 +57,7 @@ public struct TokenAuthentication: AuthenticationProvider {
 }
 
 public enum ClientError: ErrorType {
-    case InternalError
+    case InternalError(NSError)
 }
 
 public class Client: NSObject {
@@ -79,7 +79,7 @@ public class Client: NSObject {
         return NSURLSession
             .sharedSession()
             .rac_dataWithRequest(request)
-            .mapError { _ in return ClientError.InternalError }
+            .mapError { return ClientError.InternalError($0) }
             .flatMap(.Latest) { (data, response) -> SignalProducer<Project, ClientError> in
                 let payload = JSON(data: data)
                     .arrayValue
@@ -106,7 +106,7 @@ public class Client: NSObject {
         return NSURLSession
             .sharedSession()
             .rac_dataWithRequest(request)
-            .mapError { _ in return ClientError.InternalError }
+            .mapError { return ClientError.InternalError($0) }
             .flatMap(.Latest) { (data, response) -> SignalProducer<Issue, ClientError> in
                 return SignalProducer(value: Issue(payload: JSON(data: data)))
         }
