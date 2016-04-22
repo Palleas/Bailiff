@@ -7,6 +7,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="CreateIssueWindowController" customModule="Bailiff" customModuleProvider="target">
             <connections>
+                <outlet property="contentField" destination="LE3-6d-95O" id="kcO-bd-IhI"/>
+                <outlet property="projectsContainer" destination="KVc-c3-eBu" id="U77-zB-mK6"/>
                 <outlet property="window" destination="QlN-Ak-ekI" id="Jcb-ng-N4s"/>
             </connections>
         </customObject>
@@ -21,14 +23,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="480" height="247"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KVc-c3-eBu">
-                        <rect key="frame" x="20" y="203" width="443" height="26"/>
-                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Select a project..." drawsBackground="YES" completes="NO" usesDataSource="YES" numberOfVisibleItems="5" id="Hlh-Gd-hXX">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </comboBoxCell>
-                    </comboBox>
                     <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NT-Ke-Mk8">
                         <rect key="frame" x="20" y="49" width="440" height="150"/>
                         <clipView key="contentView" id="HFD-hI-KZK">
@@ -67,6 +61,17 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
+                    <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KVc-c3-eBu">
+                        <rect key="frame" x="20" y="203" width="443" height="26"/>
+                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Select a project..." drawsBackground="YES" completes="NO" usesDataSource="YES" numberOfVisibleItems="5" id="Hlh-Gd-hXX">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </comboBoxCell>
+                        <connections>
+                            <outlet property="dataSource" destination="-2" id="r06-fU-17P"/>
+                        </connections>
+                    </comboBox>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="j4J-X7-RYZ" secondAttribute="bottom" constant="20" id="Ak1-2x-cMo"/>

@@ -32,6 +32,23 @@ class CreateIssueWindowController: NSWindowController {
         super.loadWindow()
 
         NSBundle.mainBundle().loadNibNamed("CreateIssueWindowController", owner: self, topLevelObjects: nil)
+
+        self.windowDidLoad()
+    }
+
+    override func windowDidLoad() {
+        super.windowDidLoad()
+
+        client
+            .projects()
+            .collect()
+            .observeOn(UIScheduler())
+            .on(failed: { print("Error: \($0)")})
+            .startWithNext() { [weak self] projects in
+                print("Loaded \(projects) | self: \(self)")
+                self?.projects = projects
+                self?.projectsContainer.reloadData()
+            }
     }
 
     @IBAction func createIssue(sender: AnyObject) {
@@ -50,8 +67,6 @@ class CreateIssueWindowController: NSWindowController {
         let title = lines.first!
         let description = lines[1..<lines.count].joinWithSeparator("\n")
 
-        print("title: \(title)")
-        print("description: \(description)")
         client.createIssue(projects[selectedProject], title: title, description: description).startWithNext { createdIssue in
             print("Created issue #\(createdIssue.iid)")
         }
