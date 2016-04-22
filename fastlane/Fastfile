@@ -4,7 +4,7 @@ default_platform :mac
 
 platform :mac do
   before_all do
-    carthage(platform: "ios")
+    carthage(platform: "Mac")
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
