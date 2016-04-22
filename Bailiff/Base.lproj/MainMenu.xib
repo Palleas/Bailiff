@@ -12,13 +12,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Bailiff" customModuleProvider="target">
-            <connections>
-                <outlet property="contentField" destination="7Rq-v4-kyW" id="njK-rN-R9T"/>
-                <outlet property="projectsContainer" destination="fXT-Cq-nrP" id="RtW-rf-syg"/>
-                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
-            </connections>
-        </customObject>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Bailiff" customModuleProvider="target"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
@@ -669,81 +663,5 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="Bailiff" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="247"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="247"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <subviews>
-                    <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fXT-Cq-nrP">
-                        <rect key="frame" x="20" y="203" width="443" height="26"/>
-                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Select a project..." drawsBackground="YES" completes="NO" usesDataSource="YES" numberOfVisibleItems="5" id="4XS-bx-6X0">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </comboBoxCell>
-                        <connections>
-                            <outlet property="dataSource" destination="Voe-Tx-rLC" id="fmO-2M-0Ct"/>
-                        </connections>
-                    </comboBox>
-                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jX-Xj-d7f">
-                        <rect key="frame" x="20" y="49" width="440" height="150"/>
-                        <clipView key="contentView" id="rue-fI-msG">
-                            <rect key="frame" x="1" y="1" width="438" height="148"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <subviews>
-                                <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="7Rq-v4-kyW">
-                                    <rect key="frame" x="0.0" y="0.0" width="438" height="148"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="438" height="148"/>
-                                    <size key="maxSize" width="463" height="10000000"/>
-                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="minSize" width="438" height="148"/>
-                                    <size key="maxSize" width="463" height="10000000"/>
-                                </textView>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </clipView>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="150" id="hd0-Ih-PTA"/>
-                        </constraints>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="nTm-pG-YvM">
-                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="IAG-6Q-Ttg">
-                            <rect key="frame" x="423" y="1" width="16" height="148"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </scroller>
-                    </scrollView>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tdJ-VD-C32">
-                        <rect key="frame" x="385" y="13" width="81" height="32"/>
-                        <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ROQ-gR-GjT">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="createIssue:" target="Voe-Tx-rLC" id="eEk-Lp-sOo"/>
-                        </connections>
-                    </button>
-                </subviews>
-                <constraints>
-                    <constraint firstItem="fXT-Cq-nrP" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="1h1-Xy-r5B"/>
-                    <constraint firstItem="tdJ-VD-C32" firstAttribute="top" secondItem="1jX-Xj-d7f" secondAttribute="bottom" constant="8" id="FCG-5r-JNE"/>
-                    <constraint firstItem="1jX-Xj-d7f" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="IgD-fV-aP4"/>
-                    <constraint firstAttribute="trailing" secondItem="1jX-Xj-d7f" secondAttribute="trailing" constant="20" id="Mk3-38-Jai"/>
-                    <constraint firstAttribute="trailing" secondItem="fXT-Cq-nrP" secondAttribute="trailing" constant="20" id="SJK-de-Bh6"/>
-                    <constraint firstAttribute="trailing" secondItem="tdJ-VD-C32" secondAttribute="trailing" constant="20" id="Zdj-UD-ySE"/>
-                    <constraint firstItem="1jX-Xj-d7f" firstAttribute="top" secondItem="fXT-Cq-nrP" secondAttribute="bottom" constant="8" id="bnH-s0-uLv"/>
-                    <constraint firstAttribute="bottom" secondItem="tdJ-VD-C32" secondAttribute="bottom" constant="20" id="dG1-ZO-nj2"/>
-                    <constraint firstItem="fXT-Cq-nrP" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="dlV-MB-MQE"/>
-                </constraints>
-            </view>
-            <point key="canvasLocation" x="284" y="311"/>
-        </window>
     </objects>
 </document>

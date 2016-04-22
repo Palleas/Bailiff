@@ -12,6 +12,7 @@ import SwiftyJSON
 
 public protocol AuthenticationProvider {
     var headers: [String: String]? { get }
+    var rawToken: String { get }
 }
 
 public struct Project {
@@ -44,13 +45,14 @@ public struct Issue {
 }
 
 public struct TokenAuthentication: AuthenticationProvider {
-    public let token: String
+    public let rawToken: String
 
     public init(token: String) {
-        self.token = token
+        self.rawToken = token
     }
+
     public var headers: [String: String]? {
-        return ["PRIVATE-TOKEN": token]
+        return ["PRIVATE-TOKEN": rawToken]
     }
 }
 
@@ -59,8 +61,8 @@ public enum ClientError: ErrorType {
 }
 
 public class Client: NSObject {
-    let provider: AuthenticationProvider
-    let endpoint: NSURL
+    public let provider: AuthenticationProvider
+    public let endpoint: NSURL
 
     public init(provider: AuthenticationProvider, endpoint: NSURL) {
         self.provider = provider

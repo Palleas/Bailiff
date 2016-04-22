@@ -9,15 +9,29 @@
 import Cocoa
 import ReactiveCocoa
 import Arwing
+import KeychainSwift
 
 class CreateIssueFlow: NSObject {
     private let client: Client
+    private var createIssueWindowController: CreateIssueWindowController?
 
     init(client: Client) {
         self.client = client
+
+        super.init()
+        
+        let createIssueWindowController = CreateIssueWindowController(client: client)
+        self.createIssueWindowController = createIssueWindowController
+
     }
 
     func start() {
-        print("Starting Create Issue Flow")
+        guard let createIssueWindowController = createIssueWindowController else { return }
+
+        createIssueWindowController.loadWindow()
+        createIssueWindowController.showWindow(nil)
+        createIssueWindowController.window?.makeKeyAndOrderFront(self)
+
+        NSApp.activateIgnoringOtherApps(true)
     }
 }

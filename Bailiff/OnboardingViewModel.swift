@@ -9,15 +9,14 @@
 import Cocoa
 import ReactiveCocoa
 import Arwing
+import KeychainSwift
 
 class OnboardingViewModel: NSObject {
-    
-    let action = Action<(NSURL?, String), Client, OnboardingError> { input in
-        guard let url = input.0 else { return SignalProducer(error: OnboardingError.InvalidEndpoint) }
 
-        let client = Client(provider: TokenAuthentication(token: input.1), endpoint: url)
-        return SignalProducer(value: client)
+    let action = Action<(NSURL?, String), Client, OnboardingError> { (url, privateKey) in
+        guard let url = url else { return SignalProducer(error: OnboardingError.InvalidEndpoint) }
+
+        return SignalProducer(value: Client(provider: TokenAuthentication(token: privateKey), endpoint: url))
     }
 
-    
 }

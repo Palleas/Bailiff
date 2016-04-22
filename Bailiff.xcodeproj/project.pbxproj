@@ -27,9 +27,13 @@
 		7A8209791CC2E601008DB4DD /* Arwing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8209641CC2E601008DB4DD /* Arwing.framework */; };
 		7A82097A1CC2E601008DB4DD /* Arwing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8209641CC2E601008DB4DD /* Arwing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7A8209831CC2E61A008DB4DD /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8209821CC2E61A008DB4DD /* Client.swift */; };
+		7ABAF5B71CC6FB0C00B4C69E /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ABAF5B61CC6FB0C00B4C69E /* KeychainSwift.framework */; };
+		7ABAF5B81CC6FB0C00B4C69E /* KeychainSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7ABAF5B61CC6FB0C00B4C69E /* KeychainSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AF3C4341CC5C02300F20388 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF3C4331CC5C02300F20388 /* OnboardingViewModel.swift */; };
 		7AF3C4361CC5C31800F20388 /* ApplicationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF3C4351CC5C31800F20388 /* ApplicationFlow.swift */; };
 		7AF3C4381CC5C45800F20388 /* CreateIssueFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF3C4371CC5C45800F20388 /* CreateIssueFlow.swift */; };
+		7AF3C43D1CC5C60C00F20388 /* CreateIssueWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF3C43B1CC5C60C00F20388 /* CreateIssueWindowController.swift */; };
+		7AF3C43E1CC5C60C00F20388 /* CreateIssueWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AF3C43C1CC5C60C00F20388 /* CreateIssueWindowController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7ABAF5B81CC6FB0C00B4C69E /* KeychainSwift.framework in Embed Frameworks */,
 				7A5DC4B21CC2EF260081D982 /* SwiftyJSON.framework in Embed Frameworks */,
 				7A5DC4AD1CC2EBA70081D982 /* Result.framework in Embed Frameworks */,
 				7A82097A1CC2E601008DB4DD /* Arwing.framework in Embed Frameworks */,
@@ -91,9 +96,12 @@
 		7A8209741CC2E601008DB4DD /* ArwingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArwingTests.swift; sourceTree = "<group>"; };
 		7A8209761CC2E601008DB4DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A8209821CC2E61A008DB4DD /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		7ABAF5B61CC6FB0C00B4C69E /* KeychainSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainSwift.framework; path = Carthage/Build/Mac/KeychainSwift.framework; sourceTree = "<group>"; };
 		7AF3C4331CC5C02300F20388 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		7AF3C4351CC5C31800F20388 /* ApplicationFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationFlow.swift; sourceTree = "<group>"; };
 		7AF3C4371CC5C45800F20388 /* CreateIssueFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateIssueFlow.swift; sourceTree = "<group>"; };
+		7AF3C43B1CC5C60C00F20388 /* CreateIssueWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateIssueWindowController.swift; sourceTree = "<group>"; };
+		7AF3C43C1CC5C60C00F20388 /* CreateIssueWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateIssueWindowController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ABAF5B71CC6FB0C00B4C69E /* KeychainSwift.framework in Frameworks */,
 				7A5DC4AC1CC2EBA70081D982 /* Result.framework in Frameworks */,
 				7A8209791CC2E601008DB4DD /* Arwing.framework in Frameworks */,
 				7A5DC4AA1CC2EBA70081D982 /* ReactiveCocoa.framework in Frameworks */,
@@ -132,6 +141,7 @@
 		7A5DC4A01CC2EAB30081D982 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7ABAF5B61CC6FB0C00B4C69E /* KeychainSwift.framework */,
 				7A5DC4AE1CC2EC8B0081D982 /* SwiftyJSON.framework */,
 				7A5DC4A41CC2EB3A0081D982 /* ReactiveCocoa.framework */,
 				7A5DC4A51CC2EB3A0081D982 /* Result.framework */,
@@ -164,14 +174,10 @@
 			isa = PBXGroup;
 			children = (
 				7A8209521CC2E592008DB4DD /* AppDelegate.swift */,
-				7A8209541CC2E592008DB4DD /* Assets.xcassets */,
-				7A8209561CC2E592008DB4DD /* MainMenu.xib */,
-				7A8209591CC2E592008DB4DD /* Info.plist */,
-				7A5DC4B31CC44DDC0081D982 /* OnboardingWindowController.swift */,
-				7A5DC4B41CC44DDC0081D982 /* OnboardingWindowController.xib */,
-				7AF3C4331CC5C02300F20388 /* OnboardingViewModel.swift */,
+				7AF3C4421CC5C72B00F20388 /* Resources */,
+				7AF3C4411CC5C71300F20388 /* Onboarding */,
+				7AF3C4401CC5C70C00F20388 /* Create Issue */,
 				7AF3C4351CC5C31800F20388 /* ApplicationFlow.swift */,
-				7AF3C4371CC5C45800F20388 /* CreateIssueFlow.swift */,
 			);
 			path = Bailiff;
 			sourceTree = "<group>";
@@ -193,6 +199,36 @@
 				7A8209761CC2E601008DB4DD /* Info.plist */,
 			);
 			path = ArwingTests;
+			sourceTree = "<group>";
+		};
+		7AF3C4401CC5C70C00F20388 /* Create Issue */ = {
+			isa = PBXGroup;
+			children = (
+				7AF3C4371CC5C45800F20388 /* CreateIssueFlow.swift */,
+				7AF3C43B1CC5C60C00F20388 /* CreateIssueWindowController.swift */,
+				7AF3C43C1CC5C60C00F20388 /* CreateIssueWindowController.xib */,
+			);
+			name = "Create Issue";
+			sourceTree = "<group>";
+		};
+		7AF3C4411CC5C71300F20388 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				7A5DC4B31CC44DDC0081D982 /* OnboardingWindowController.swift */,
+				7A5DC4B41CC44DDC0081D982 /* OnboardingWindowController.xib */,
+				7AF3C4331CC5C02300F20388 /* OnboardingViewModel.swift */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
+		7AF3C4421CC5C72B00F20388 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7A8209541CC2E592008DB4DD /* Assets.xcassets */,
+				7A8209561CC2E592008DB4DD /* MainMenu.xib */,
+				7A8209591CC2E592008DB4DD /* Info.plist */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A5DC4B61CC44DDC0081D982 /* OnboardingWindowController.xib in Resources */,
+				7AF3C43E1CC5C60C00F20388 /* CreateIssueWindowController.xib in Resources */,
 				7A8209551CC2E592008DB4DD /* Assets.xcassets in Resources */,
 				7A8209581CC2E592008DB4DD /* MainMenu.xib in Resources */,
 			);
@@ -340,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AF3C4361CC5C31800F20388 /* ApplicationFlow.swift in Sources */,
+				7AF3C43D1CC5C60C00F20388 /* CreateIssueWindowController.swift in Sources */,
 				7A5DC4B51CC44DDC0081D982 /* OnboardingWindowController.swift in Sources */,
 				7AF3C4341CC5C02300F20388 /* OnboardingViewModel.swift in Sources */,
 				7A8209531CC2E592008DB4DD /* AppDelegate.swift in Sources */,

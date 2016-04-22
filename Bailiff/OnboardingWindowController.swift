@@ -29,8 +29,6 @@ class OnboardingWindowController: NSWindowController {
         self.viewModel = viewModel
 
         super.init(window: nil)
-
-        NSBundle.mainBundle().loadNibNamed("OnboardingWindowController", owner: self, topLevelObjects: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -39,6 +37,8 @@ class OnboardingWindowController: NSWindowController {
 
     override func loadWindow() {
         super.loadWindow()
+
+        NSBundle.mainBundle().loadNibNamed("OnboardingWindowController", owner: self, topLevelObjects: nil)
 
         cocoaAction = CocoaAction(viewModel.action) { [unowned self] input in
             let url = NSURL(string: self.installationField.stringValue)
