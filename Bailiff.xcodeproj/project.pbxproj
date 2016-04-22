@@ -24,7 +24,6 @@
 		7A8209671CC2E601008DB4DD /* Arwing.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A8209661CC2E601008DB4DD /* Arwing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A82096E1CC2E601008DB4DD /* Arwing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8209641CC2E601008DB4DD /* Arwing.framework */; };
 		7A8209751CC2E601008DB4DD /* ArwingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8209741CC2E601008DB4DD /* ArwingTests.swift */; };
-		7A8209791CC2E601008DB4DD /* Arwing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8209641CC2E601008DB4DD /* Arwing.framework */; };
 		7A82097A1CC2E601008DB4DD /* Arwing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8209641CC2E601008DB4DD /* Arwing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7A8209831CC2E61A008DB4DD /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8209821CC2E61A008DB4DD /* Client.swift */; };
 		7ABAF5B71CC6FB0C00B4C69E /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ABAF5B61CC6FB0C00B4C69E /* KeychainSwift.framework */; };
@@ -111,7 +110,6 @@
 			files = (
 				7ABAF5B71CC6FB0C00B4C69E /* KeychainSwift.framework in Frameworks */,
 				7A5DC4AC1CC2EBA70081D982 /* Result.framework in Frameworks */,
-				7A8209791CC2E601008DB4DD /* Arwing.framework in Frameworks */,
 				7A5DC4AA1CC2EBA70081D982 /* ReactiveCocoa.framework in Frameworks */,
 				7A5DC4B11CC2EF260081D982 /* SwiftyJSON.framework in Frameworks */,
 			);
@@ -561,7 +559,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
@@ -589,7 +586,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
