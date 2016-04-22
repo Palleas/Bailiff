@@ -1,0 +1,26 @@
+fastlane_version "1.81.0"
+
+default_platform :mac
+
+platform :mac do
+  before_all do
+    carthage(platform: "ios")
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+    scan
+  end
+
+  desc "Submit a new Beta Build to Apple TestFlight"
+  desc "This will also make sure the profile is up to date"
+  lane :beta do
+    # match(type: "development") # more information: https://codesigning.guide
+    gym(scheme: "Bailiff") # Build your app - more options available
+    zip(path: "Bailiff.app")
+    hockey(ipa: "Bailiff.app.zip", dsym: "Bailiff.app.dSYM.zip")
+    # sh "your_script.sh"
+    # You can also use other beta testing services here (run `fastlane actions`)
+  end
+
+end

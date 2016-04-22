@@ -64,3 +64,8 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
+
+# Release artifacts 
+*.app.dSYM.zip
+*.app.zip
+*.app/
