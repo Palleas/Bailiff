@@ -1,0 +1,1 @@
+# Bailiff: Mac application to create issues on GitLab 
