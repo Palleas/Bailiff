@@ -7,20 +7,14 @@ platform :mac do
     carthage(platform: "ios")
   end
 
-  desc "Runs all the tests"
-  lane :test do
-    scan
-  end
-
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
-    # match(type: "development") # more information: https://codesigning.guide
+    ensure_git_status_clean
     gym(scheme: "Bailiff") # Build your app - more options available
     zip(path: "Bailiff.app")
     hockey(ipa: "Bailiff.app.zip", dsym: "Bailiff.app.dSYM.zip")
-    # sh "your_script.sh"
-    # You can also use other beta testing services here (run `fastlane actions`)
+    reset_git_repo(exclude: "Carthage")
   end
 
 end
