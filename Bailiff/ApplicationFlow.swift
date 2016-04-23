@@ -18,6 +18,8 @@ class ApplicationFlow: NSObject {
     private var createIssueFlow: CreateIssueFlow?
     private let onboardingViewModel = OnboardingViewModel()
     private let onboardingWindowController: OnboardingWindowController
+    private var statusBarItem: NSStatusItem?
+    private var client: Client?
 
     override init() {
         self.onboardingWindowController = OnboardingWindowController(viewModel: onboardingViewModel)
@@ -29,11 +31,16 @@ class ApplicationFlow: NSObject {
         // TODO: Move onboarding in specific flow
         let keychain = KeychainSwift()
         if let endPointString = keychain.get(ApplicationFlow.EndpointStorageKey), let endpoint = NSURL(string: endPointString), let token = keychain.get(ApplicationFlow.PrivateKeyStorageKey) {
-            let client = Client(provider: TokenAuthentication(token: token), endpoint: endpoint)
+            self.client = Client(provider: TokenAuthentication(token: token), endpoint: endpoint)
 
-            let createIssueFlow = CreateIssueFlow(client: client)
-            createIssueFlow.start()
-            self.createIssueFlow = createIssueFlow
+            // Show menu item
+            let item = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
+            item.image = NSImage(named: "logo-menu")!
+            item.image?.template = true
+            item.highlightMode = true
+            item.menu = self.buildMenu()
+
+            self.statusBarItem = item
 
             return
         }
@@ -58,4 +65,30 @@ class ApplicationFlow: NSObject {
                 self?.createIssueFlow = createIssueFlow
             }
     }
+
+    private func buildMenu() -> NSMenu {
+        let menu = NSMenu(title: "Bailiff")
+        menu.addItemWithTitle("Create Issue", action: #selector(didSelectCreateIssue), keyEquivalent: "C")?.target = self
+        menu.addItem(NSMenuItem.separatorItem())
+        menu.addItemWithTitle("About Bailiff", action: #selector(didSelectAbout), keyEquivalent: "A")?.target = self
+        menu.addItemWithTitle("Quit", action: #selector(didSelectQuit), keyEquivalent: "Q")?.target = self
+
+        return menu
+    }
+
+    func didSelectCreateIssue() {
+        let createIssueFlow = CreateIssueFlow(client: client!)
+        createIssueFlow.start()
+        self.createIssueFlow = createIssueFlow
+
+    }
+
+    func didSelectAbout() {
+
+    }
+
+    func didSelectQuit() {
+
+    }
+
 }
