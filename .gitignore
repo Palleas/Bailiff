@@ -69,3 +69,4 @@ fastlane/test_output
 *.app.dSYM.zip
 *.app.zip
 *.app/
+.app.dSYM
