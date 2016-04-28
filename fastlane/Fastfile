@@ -13,7 +13,7 @@ platform :mac do
     ensure_git_status_clean
     gym(scheme: "Bailiff") # Build your app - more options available
     zip(path: "Bailiff.app")
-    sh("/Users/Romain/Tools/Sparkle-1.14.0/bin/sign_update Bailiff.app.zip keys/dsa_priv.pem")
+    sh("/Users/Romain/Tools/Sparkle-1.14.0/bin/sign_update /Users/Romain/Projects/Bailiff/Bailiff.app.zip /Users/Romain/Projects/Bailiff/keys/dsa_priv.pem")
     hockey(ipa: "Bailiff.app.zip", dsym: "Bailiff.app.dSYM.zip")
     reset_git_repo(exclude: "Carthage")
   end
