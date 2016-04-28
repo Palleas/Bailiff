@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A371B731CCBC6860099EB13 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A371B721CCBC6860099EB13 /* OnboardingFlow.swift */; };
 		7A5DC4A81CC2EB400081D982 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5DC4A41CC2EB3A0081D982 /* ReactiveCocoa.framework */; };
 		7A5DC4A91CC2EB400081D982 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5DC4A51CC2EB3A0081D982 /* Result.framework */; };
 		7A5DC4AA1CC2EBA70081D982 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5DC4A41CC2EB3A0081D982 /* ReactiveCocoa.framework */; };
@@ -33,6 +34,8 @@
 		7AF3C4381CC5C45800F20388 /* CreateIssueFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF3C4371CC5C45800F20388 /* CreateIssueFlow.swift */; };
 		7AF3C43D1CC5C60C00F20388 /* CreateIssueWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF3C43B1CC5C60C00F20388 /* CreateIssueWindowController.swift */; };
 		7AF3C43E1CC5C60C00F20388 /* CreateIssueWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AF3C43C1CC5C60C00F20388 /* CreateIssueWindowController.xib */; };
+		7AF5D1081CD19B2400F6D0BE /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AF5D1071CD19B2400F6D0BE /* Sparkle.framework */; };
+		7AF5D10A1CD19CAD00F6D0BE /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 7AF5D1091CD19CAD00F6D0BE /* dsa_pub.pem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7A371B721CCBC6860099EB13 /* OnboardingFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
 		7A5DC4A41CC2EB3A0081D982 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		7A5DC4A51CC2EB3A0081D982 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		7A5DC4AE1CC2EC8B0081D982 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 		7AF3C4371CC5C45800F20388 /* CreateIssueFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateIssueFlow.swift; sourceTree = "<group>"; };
 		7AF3C43B1CC5C60C00F20388 /* CreateIssueWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateIssueWindowController.swift; sourceTree = "<group>"; };
 		7AF3C43C1CC5C60C00F20388 /* CreateIssueWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateIssueWindowController.xib; sourceTree = "<group>"; };
+		7AF5D1071CD19B2400F6D0BE /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		7AF5D1091CD19CAD00F6D0BE /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,7 @@
 			files = (
 				7ABAF5B71CC6FB0C00B4C69E /* KeychainSwift.framework in Frameworks */,
 				7A5DC4AC1CC2EBA70081D982 /* Result.framework in Frameworks */,
+				7AF5D1081CD19B2400F6D0BE /* Sparkle.framework in Frameworks */,
 				7A5DC4AA1CC2EBA70081D982 /* ReactiveCocoa.framework in Frameworks */,
 				7A5DC4B11CC2EF260081D982 /* SwiftyJSON.framework in Frameworks */,
 			);
@@ -136,9 +143,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A371B741CCBC68E0099EB13 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Flow;
+			sourceTree = "<group>";
+		};
 		7A5DC4A01CC2EAB30081D982 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7AF5D1071CD19B2400F6D0BE /* Sparkle.framework */,
 				7ABAF5B61CC6FB0C00B4C69E /* KeychainSwift.framework */,
 				7A5DC4AE1CC2EC8B0081D982 /* SwiftyJSON.framework */,
 				7A5DC4A41CC2EB3A0081D982 /* ReactiveCocoa.framework */,
@@ -171,6 +186,7 @@
 		7A8209511CC2E592008DB4DD /* Bailiff */ = {
 			isa = PBXGroup;
 			children = (
+				7A371B741CCBC68E0099EB13 /* Flow */,
 				7A8209521CC2E592008DB4DD /* AppDelegate.swift */,
 				7AF3C4421CC5C72B00F20388 /* Resources */,
 				7AF3C4411CC5C71300F20388 /* Onboarding */,
@@ -215,6 +231,7 @@
 				7A5DC4B31CC44DDC0081D982 /* OnboardingWindowController.swift */,
 				7A5DC4B41CC44DDC0081D982 /* OnboardingWindowController.xib */,
 				7AF3C4331CC5C02300F20388 /* OnboardingViewModel.swift */,
+				7A371B721CCBC6860099EB13 /* OnboardingFlow.swift */,
 			);
 			name = Onboarding;
 			sourceTree = "<group>";
@@ -222,6 +239,7 @@
 		7AF3C4421CC5C72B00F20388 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7AF5D1091CD19CAD00F6D0BE /* dsa_pub.pem */,
 				7A8209541CC2E592008DB4DD /* Assets.xcassets */,
 				7A8209561CC2E592008DB4DD /* MainMenu.xib */,
 				7A8209591CC2E592008DB4DD /* Info.plist */,
@@ -346,6 +364,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AF5D10A1CD19CAD00F6D0BE /* dsa_pub.pem in Resources */,
 				7A5DC4B61CC44DDC0081D982 /* OnboardingWindowController.xib in Resources */,
 				7AF3C43E1CC5C60C00F20388 /* CreateIssueWindowController.xib in Resources */,
 				7A8209551CC2E592008DB4DD /* Assets.xcassets in Resources */,
@@ -375,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AF3C4361CC5C31800F20388 /* ApplicationFlow.swift in Sources */,
+				7A371B731CCBC6860099EB13 /* OnboardingFlow.swift in Sources */,
 				7AF3C43D1CC5C60C00F20388 /* CreateIssueWindowController.swift in Sources */,
 				7A5DC4B51CC44DDC0081D982 /* OnboardingWindowController.swift in Sources */,
 				7AF3C4341CC5C02300F20388 /* OnboardingViewModel.swift in Sources */,
@@ -522,6 +542,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Bailiff/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -539,6 +560,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Bailiff/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

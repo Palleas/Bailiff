@@ -12,58 +12,25 @@ import Arwing
 import KeychainSwift
 
 class ApplicationFlow: NSObject {
-    private static let PrivateKeyStorageKey = "com.perfectly-cooked.bailiff.PrivateKeyStorageKey"
-    private static let EndpointStorageKey = "EndpointStorageKey"
+    static let PrivateKeyStorageKey = "com.perfectly-cooked.bailiff.PrivateKeyStorageKey"
+    static let EndpointStorageKey = "com.perfectly-cooked.bailiff.EndpointStorageKey"
 
     private var createIssueFlow: CreateIssueFlow?
-    private let onboardingViewModel = OnboardingViewModel()
-    private let onboardingWindowController: OnboardingWindowController
     private var statusBarItem: NSStatusItem?
-    private var client: Client?
-
-    override init() {
-        self.onboardingWindowController = OnboardingWindowController(viewModel: onboardingViewModel)
-
-        super.init()
-    }
+    private var client = MutableProperty<Client?>(nil)
 
     func start() {
-        // TODO: Move onboarding in specific flow
-        let keychain = KeychainSwift()
-        if let endPointString = keychain.get(ApplicationFlow.EndpointStorageKey), let endpoint = NSURL(string: endPointString), let token = keychain.get(ApplicationFlow.PrivateKeyStorageKey) {
-            self.client = Client(provider: TokenAuthentication(token: token), endpoint: endpoint)
-
-            // Show menu item
-            let item = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
-            item.image = NSImage(named: "logo-menu")!
-            item.image?.template = true
-            item.highlightMode = true
-            item.menu = self.buildMenu()
-
-            self.statusBarItem = item
-
-            return
+        let onboarding = OnboardingFlow()
+        onboarding.prepare().startWithNext() { [weak self] client in
+            self?.client.value = client
         }
 
-        onboardingWindowController.loadWindow()
-        onboardingWindowController.showWindow(nil)
-        onboardingWindowController.window?.makeKeyAndOrderFront(self)
-
-        onboardingViewModel.action.values
-            .on(next: { client in
-                // Store token
-                let keychain = KeychainSwift()
-                keychain.set(client.provider.rawToken, forKey: ApplicationFlow.PrivateKeyStorageKey)
-                // Store endpoint
-                keychain.set(client.endpoint.absoluteString, forKey: ApplicationFlow.EndpointStorageKey)
-            })
-            .observeOn(UIScheduler())
-            .observeNext { [weak self] client in
-                let createIssueFlow = CreateIssueFlow(client: client)
-                createIssueFlow.start()
-
-                self?.createIssueFlow = createIssueFlow
-            }
+        client.producer.ignoreNil().startWithNext() { [weak self] _ in
+            guard let strongSelf = self else { return }
+            
+            strongSelf.statusBarItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
+            strongSelf.statusBarItem?.menu = strongSelf.buildMenu()
+        }
     }
 
     private func buildMenu() -> NSMenu {
@@ -77,7 +44,7 @@ class ApplicationFlow: NSObject {
     }
 
     func didSelectCreateIssue() {
-        let createIssueFlow = CreateIssueFlow(client: client!)
+        let createIssueFlow = CreateIssueFlow(client: client.value!)
         createIssueFlow.start()
         self.createIssueFlow = createIssueFlow
 
