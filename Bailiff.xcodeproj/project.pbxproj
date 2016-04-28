@@ -333,6 +333,7 @@
 				TargetAttributes = {
 					7A82094E1CC2E592008DB4DD = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 8VS9JKFDZS;
 					};
 					7A8209631CC2E601008DB4DD = {
 						CreatedOnToolsVersion = 7.3;
@@ -541,6 +542,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -550,8 +553,9 @@
 				);
 				INFOPLIST_FILE = Bailiff/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.Bailiff";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.mac.Bailiff";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -559,6 +563,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -568,8 +574,9 @@
 				);
 				INFOPLIST_FILE = Bailiff/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.Bailiff";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.mac.Bailiff";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
