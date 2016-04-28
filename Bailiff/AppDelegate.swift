@@ -10,6 +10,7 @@ import Cocoa
 import Arwing
 import ReactiveCocoa
 import Result
+import Sparkle
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
