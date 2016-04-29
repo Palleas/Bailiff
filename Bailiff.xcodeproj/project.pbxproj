@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A30EA1F1CD3C5F800D37C51 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A30EA1C1CD3C5F500D37C51 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A30EA201CD3C60200D37C51 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A30EA1C1CD3C5F500D37C51 /* Sparkle.framework */; };
+		7A30EA211CD3C60D00D37C51 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A30EA1C1CD3C5F500D37C51 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7A371B731CCBC6860099EB13 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A371B721CCBC6860099EB13 /* OnboardingFlow.swift */; };
 		7A5DC4A81CC2EB400081D982 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5DC4A41CC2EB3A0081D982 /* ReactiveCocoa.framework */; };
 		7A5DC4A91CC2EB400081D982 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5DC4A51CC2EB3A0081D982 /* Result.framework */; };
@@ -34,10 +37,7 @@
 		7AF3C4381CC5C45800F20388 /* CreateIssueFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF3C4371CC5C45800F20388 /* CreateIssueFlow.swift */; };
 		7AF3C43D1CC5C60C00F20388 /* CreateIssueWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF3C43B1CC5C60C00F20388 /* CreateIssueWindowController.swift */; };
 		7AF3C43E1CC5C60C00F20388 /* CreateIssueWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AF3C43C1CC5C60C00F20388 /* CreateIssueWindowController.xib */; };
-		7AF5D1081CD19B2400F6D0BE /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AF5D1071CD19B2400F6D0BE /* Sparkle.framework */; };
 		7AF5D10A1CD19CAD00F6D0BE /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 7AF5D1091CD19CAD00F6D0BE /* dsa_pub.pem */; };
-		7AF5D10B1CD1A45300F6D0BE /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AF5D1071CD19B2400F6D0BE /* Sparkle.framework */; };
-		7AF5D10C1CD1A45300F6D0BE /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AF5D1071CD19B2400F6D0BE /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +65,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		7A30EA1A1CD3C45C00D37C51 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				7A30EA211CD3C60D00D37C51 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7A82097E1CC2E601008DB4DD /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -72,7 +82,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				7ABAF5B81CC6FB0C00B4C69E /* KeychainSwift.framework in Embed Frameworks */,
-				7AF5D10C1CD1A45300F6D0BE /* Sparkle.framework in Embed Frameworks */,
+				7A30EA1F1CD3C5F800D37C51 /* Sparkle.framework in Embed Frameworks */,
 				7A5DC4B21CC2EF260081D982 /* SwiftyJSON.framework in Embed Frameworks */,
 				7A5DC4AD1CC2EBA70081D982 /* Result.framework in Embed Frameworks */,
 				7A82097A1CC2E601008DB4DD /* Arwing.framework in Embed Frameworks */,
@@ -84,6 +94,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7A30EA1C1CD3C5F500D37C51 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		7A371B721CCBC6860099EB13 /* OnboardingFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
 		7A5DC4A41CC2EB3A0081D982 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		7A5DC4A51CC2EB3A0081D982 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
@@ -108,7 +119,6 @@
 		7AF3C4371CC5C45800F20388 /* CreateIssueFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateIssueFlow.swift; sourceTree = "<group>"; };
 		7AF3C43B1CC5C60C00F20388 /* CreateIssueWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateIssueWindowController.swift; sourceTree = "<group>"; };
 		7AF3C43C1CC5C60C00F20388 /* CreateIssueWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateIssueWindowController.xib; sourceTree = "<group>"; };
-		7AF5D1071CD19B2400F6D0BE /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		7AF5D1091CD19CAD00F6D0BE /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,9 +128,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ABAF5B71CC6FB0C00B4C69E /* KeychainSwift.framework in Frameworks */,
-				7AF5D10B1CD1A45300F6D0BE /* Sparkle.framework in Frameworks */,
+				7A30EA201CD3C60200D37C51 /* Sparkle.framework in Frameworks */,
 				7A5DC4AC1CC2EBA70081D982 /* Result.framework in Frameworks */,
-				7AF5D1081CD19B2400F6D0BE /* Sparkle.framework in Frameworks */,
 				7A5DC4AA1CC2EBA70081D982 /* ReactiveCocoa.framework in Frameworks */,
 				7A5DC4B11CC2EF260081D982 /* SwiftyJSON.framework in Frameworks */,
 			);
@@ -157,8 +166,8 @@
 		7A5DC4A01CC2EAB30081D982 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7AF5D1071CD19B2400F6D0BE /* Sparkle.framework */,
 				7ABAF5B61CC6FB0C00B4C69E /* KeychainSwift.framework */,
+				7A30EA1C1CD3C5F500D37C51 /* Sparkle.framework */,
 				7A5DC4AE1CC2EC8B0081D982 /* SwiftyJSON.framework */,
 				7A5DC4A41CC2EB3A0081D982 /* ReactiveCocoa.framework */,
 				7A5DC4A51CC2EB3A0081D982 /* Result.framework */,
@@ -273,6 +282,7 @@
 				7A82094C1CC2E592008DB4DD /* Frameworks */,
 				7A82094D1CC2E592008DB4DD /* Resources */,
 				7A82097E1CC2E601008DB4DD /* Embed Frameworks */,
+				7A30EA1A1CD3C45C00D37C51 /* CopyFiles */,
 			);
 			buildRules = (
 			);

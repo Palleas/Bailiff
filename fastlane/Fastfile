@@ -11,10 +11,10 @@ platform :mac do
   desc "This will also make sure the profile is up to date"
   lane :beta do
     ensure_git_status_clean
-    gym(scheme: "Bailiff") # Build your app - more options available
+    gym(scheme: "Bailiff")
     zip(path: "Bailiff.app")
-    hockey(ipa: "Bailiff.app.zip", dsym: "Bailiff.app.dSYM.zip")
-    reset_git_repo(exclude: ["Carthage", "Bailiff.app"])
+    hockey(ipa: "Bailiff.app.zip", dsym: "Bailiff.app.dSYM.zip", api_token: "5fcef81dbdfd44f7a9fde49c16f5fe3a")
+    reset_git_repo(exclude: ["Carthage"])
   end
 
 end
