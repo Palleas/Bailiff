@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Bailiff.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7A82096C1CC2E601008DB4DD"
+               BuildableName = "ArwingTests.xctest"
+               BlueprintName = "ArwingTests"
+               ReferencedContainer = "container:Bailiff.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -32,9 +46,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7A82096C1CC2E601008DB4DD"
-               BuildableName = "ArwingTests.xctest"
-               BlueprintName = "ArwingTests"
+               BlueprintIdentifier = "7A02AF3D1CD820A800D9AAA9"
+               BuildableName = "BailiffTests.xctest"
+               BlueprintName = "BailiffTests"
                ReferencedContainer = "container:Bailiff.xcodeproj">
             </BuildableReference>
          </TestableReference>

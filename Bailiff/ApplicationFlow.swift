@@ -12,15 +12,14 @@ import Arwing
 import KeychainSwift
 
 class ApplicationFlow: NSObject {
-    static let PrivateKeyStorageKey = "com.perfectly-cooked.bailiff.PrivateKeyStorageKey"
-    static let EndpointStorageKey = "com.perfectly-cooked.bailiff.EndpointStorageKey"
-
     private var createIssueFlow: CreateIssueFlow?
     private var statusBarItem: NSStatusItem?
     private var client = MutableProperty<Client?>(nil)
 
+    private let presenter = DefaultPresenter()
+
     func start() {
-        let onboarding = OnboardingFlow()
+        let onboarding = OnboardingFlow(keychain: KeychainSwiftWrapper(keychain: KeychainSwift()), presenter: presenter, onboardingViewModel: OnboardingViewModel())
         onboarding.prepare().startWithNext() { [weak self] client in
             self?.client.value = client
         }

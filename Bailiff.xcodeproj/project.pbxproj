@@ -7,6 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A02AF411CD820A800D9AAA9 /* BailiffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02AF401CD820A800D9AAA9 /* BailiffTests.swift */; };
+		7A02AF481CD820BB00D9AAA9 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5DC4AE1CC2EC8B0081D982 /* SwiftyJSON.framework */; };
+		7A02AF491CD820BB00D9AAA9 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5DC4A41CC2EB3A0081D982 /* ReactiveCocoa.framework */; };
+		7A02AF4A1CD820BB00D9AAA9 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5DC4A51CC2EB3A0081D982 /* Result.framework */; };
+		7A02AF4C1CD8213C00D9AAA9 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A5DC4AE1CC2EC8B0081D982 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A02AF4D1CD8213C00D9AAA9 /* ReactiveCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A5DC4A41CC2EB3A0081D982 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A02AF4E1CD8213C00D9AAA9 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A5DC4A51CC2EB3A0081D982 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A02AF521CD8231900D9AAA9 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A02AF4F1CD8231900D9AAA9 /* Nimble.framework */; };
+		7A02AF531CD8231900D9AAA9 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A02AF501CD8231900D9AAA9 /* OHHTTPStubs.framework */; };
+		7A02AF541CD8231900D9AAA9 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A02AF511CD8231900D9AAA9 /* Quick.framework */; };
+		7A02AF551CD8232300D9AAA9 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A02AF4F1CD8231900D9AAA9 /* Nimble.framework */; };
+		7A02AF561CD8232300D9AAA9 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A02AF501CD8231900D9AAA9 /* OHHTTPStubs.framework */; };
+		7A02AF571CD8232300D9AAA9 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A02AF511CD8231900D9AAA9 /* Quick.framework */; };
+		7A02AF581CD8232500D9AAA9 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A02AF4F1CD8231900D9AAA9 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A02AF591CD8232500D9AAA9 /* OHHTTPStubs.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A02AF501CD8231900D9AAA9 /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A02AF5A1CD8232500D9AAA9 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A02AF511CD8231900D9AAA9 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A02AF5D1CD8237400D9AAA9 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02AF5C1CD8237400D9AAA9 /* KeychainWrapper.swift */; };
+		7A02AF5F1CD8248900D9AAA9 /* OnboardingFlowSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02AF5E1CD8248900D9AAA9 /* OnboardingFlowSpecs.swift */; };
+		7A02AF601CD8269600D9AAA9 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A371B721CCBC6860099EB13 /* OnboardingFlow.swift */; };
+		7A0BD07F1CD9546C0044D079 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02AF5C1CD8237400D9AAA9 /* KeychainWrapper.swift */; };
+		7A0BD0801CD955AB0044D079 /* OnboardingWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5DC4B31CC44DDC0081D982 /* OnboardingWindowController.swift */; };
+		7A0BD0811CD955B10044D079 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF3C4331CC5C02300F20388 /* OnboardingViewModel.swift */; };
+		7A0BD0841CD957830044D079 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0BD0831CD957830044D079 /* Presenter.swift */; };
+		7A0BD0851CD957F00044D079 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0BD0831CD957830044D079 /* Presenter.swift */; };
 		7A30EA1F1CD3C5F800D37C51 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A30EA1C1CD3C5F500D37C51 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7A30EA201CD3C60200D37C51 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A30EA1C1CD3C5F500D37C51 /* Sparkle.framework */; };
 		7A30EA211CD3C60D00D37C51 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A30EA1C1CD3C5F500D37C51 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -41,6 +65,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7A02AF431CD820A800D9AAA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A8209471CC2E592008DB4DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A82094E1CC2E592008DB4DD;
+			remoteInfo = Bailiff;
+		};
 		7A82096F1CC2E601008DB4DD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7A8209471CC2E592008DB4DD /* Project object */;
@@ -65,6 +96,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		7A02AF4B1CD8213000D9AAA9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7A02AF581CD8232500D9AAA9 /* Nimble.framework in CopyFiles */,
+				7A02AF591CD8232500D9AAA9 /* OHHTTPStubs.framework in CopyFiles */,
+				7A02AF5A1CD8232500D9AAA9 /* Quick.framework in CopyFiles */,
+				7A02AF4C1CD8213C00D9AAA9 /* SwiftyJSON.framework in CopyFiles */,
+				7A02AF4D1CD8213C00D9AAA9 /* ReactiveCocoa.framework in CopyFiles */,
+				7A02AF4E1CD8213C00D9AAA9 /* Result.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7A30EA1A1CD3C45C00D37C51 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -94,6 +140,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7A02AF3E1CD820A800D9AAA9 /* BailiffTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BailiffTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A02AF401CD820A800D9AAA9 /* BailiffTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BailiffTests.swift; sourceTree = "<group>"; };
+		7A02AF421CD820A800D9AAA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A02AF4F1CD8231900D9AAA9 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		7A02AF501CD8231900D9AAA9 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/Mac/OHHTTPStubs.framework; sourceTree = "<group>"; };
+		7A02AF511CD8231900D9AAA9 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
+		7A02AF5C1CD8237400D9AAA9 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		7A02AF5E1CD8248900D9AAA9 /* OnboardingFlowSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingFlowSpecs.swift; sourceTree = "<group>"; };
+		7A0BD0831CD957830044D079 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		7A30EA1C1CD3C5F500D37C51 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		7A371B721CCBC6860099EB13 /* OnboardingFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
 		7A5DC4A41CC2EB3A0081D982 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = "<group>"; };
@@ -123,6 +178,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7A02AF3B1CD820A800D9AAA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A02AF481CD820BB00D9AAA9 /* SwiftyJSON.framework in Frameworks */,
+				7A02AF491CD820BB00D9AAA9 /* ReactiveCocoa.framework in Frameworks */,
+				7A02AF551CD8232300D9AAA9 /* Nimble.framework in Frameworks */,
+				7A02AF561CD8232300D9AAA9 /* OHHTTPStubs.framework in Frameworks */,
+				7A02AF571CD8232300D9AAA9 /* Quick.framework in Frameworks */,
+				7A02AF4A1CD820BB00D9AAA9 /* Result.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7A82094C1CC2E592008DB4DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -149,13 +217,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A02AF541CD8231900D9AAA9 /* Quick.framework in Frameworks */,
+				7A02AF531CD8231900D9AAA9 /* OHHTTPStubs.framework in Frameworks */,
 				7A82096E1CC2E601008DB4DD /* Arwing.framework in Frameworks */,
+				7A02AF521CD8231900D9AAA9 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A02AF3F1CD820A800D9AAA9 /* BailiffTests */ = {
+			isa = PBXGroup;
+			children = (
+				7A02AF401CD820A800D9AAA9 /* BailiffTests.swift */,
+				7A02AF421CD820A800D9AAA9 /* Info.plist */,
+				7A02AF5E1CD8248900D9AAA9 /* OnboardingFlowSpecs.swift */,
+			);
+			path = BailiffTests;
+			sourceTree = "<group>";
+		};
+		7A02AF5B1CD8235900D9AAA9 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				7A02AF5C1CD8237400D9AAA9 /* KeychainWrapper.swift */,
+			);
+			name = Domain;
+			sourceTree = "<group>";
+		};
+		7A0BD0821CD957730044D079 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				7A0BD0831CD957830044D079 /* Presenter.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		7A371B741CCBC68E0099EB13 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +263,9 @@
 		7A5DC4A01CC2EAB30081D982 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A02AF4F1CD8231900D9AAA9 /* Nimble.framework */,
+				7A02AF501CD8231900D9AAA9 /* OHHTTPStubs.framework */,
+				7A02AF511CD8231900D9AAA9 /* Quick.framework */,
 				7ABAF5B61CC6FB0C00B4C69E /* KeychainSwift.framework */,
 				7A30EA1C1CD3C5F500D37C51 /* Sparkle.framework */,
 				7A5DC4AE1CC2EC8B0081D982 /* SwiftyJSON.framework */,
@@ -181,6 +281,7 @@
 				7A8209511CC2E592008DB4DD /* Bailiff */,
 				7A8209651CC2E601008DB4DD /* Arwing */,
 				7A8209731CC2E601008DB4DD /* ArwingTests */,
+				7A02AF3F1CD820A800D9AAA9 /* BailiffTests */,
 				7A8209501CC2E592008DB4DD /* Products */,
 				7A5DC4A01CC2EAB30081D982 /* Frameworks */,
 			);
@@ -192,6 +293,7 @@
 				7A82094F1CC2E592008DB4DD /* Bailiff.app */,
 				7A8209641CC2E601008DB4DD /* Arwing.framework */,
 				7A82096D1CC2E601008DB4DD /* ArwingTests.xctest */,
+				7A02AF3E1CD820A800D9AAA9 /* BailiffTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,6 +301,8 @@
 		7A8209511CC2E592008DB4DD /* Bailiff */ = {
 			isa = PBXGroup;
 			children = (
+				7A0BD0821CD957730044D079 /* UI */,
+				7A02AF5B1CD8235900D9AAA9 /* Domain */,
 				7A371B741CCBC68E0099EB13 /* Flow */,
 				7A8209521CC2E592008DB4DD /* AppDelegate.swift */,
 				7AF3C4421CC5C72B00F20388 /* Resources */,
@@ -274,6 +378,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		7A02AF3D1CD820A800D9AAA9 /* BailiffTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A02AF471CD820A800D9AAA9 /* Build configuration list for PBXNativeTarget "BailiffTests" */;
+			buildPhases = (
+				7A02AF3A1CD820A800D9AAA9 /* Sources */,
+				7A02AF3B1CD820A800D9AAA9 /* Frameworks */,
+				7A02AF3C1CD820A800D9AAA9 /* Resources */,
+				7A02AF4B1CD8213000D9AAA9 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A02AF441CD820A800D9AAA9 /* PBXTargetDependency */,
+			);
+			name = BailiffTests;
+			productName = BailiffTests;
+			productReference = 7A02AF3E1CD820A800D9AAA9 /* BailiffTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		7A82094E1CC2E592008DB4DD /* Bailiff */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A82095C1CC2E592008DB4DD /* Build configuration list for PBXNativeTarget "Bailiff" */;
@@ -341,6 +464,10 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Perfectly-Cooked";
 				TargetAttributes = {
+					7A02AF3D1CD820A800D9AAA9 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 7A82094E1CC2E592008DB4DD;
+					};
 					7A82094E1CC2E592008DB4DD = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 8VS9JKFDZS;
@@ -370,11 +497,19 @@
 				7A82094E1CC2E592008DB4DD /* Bailiff */,
 				7A8209631CC2E601008DB4DD /* Arwing */,
 				7A82096C1CC2E601008DB4DD /* ArwingTests */,
+				7A02AF3D1CD820A800D9AAA9 /* BailiffTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7A02AF3C1CD820A800D9AAA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7A82094D1CC2E592008DB4DD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -404,15 +539,31 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7A02AF3A1CD820A800D9AAA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A02AF601CD8269600D9AAA9 /* OnboardingFlow.swift in Sources */,
+				7A0BD0851CD957F00044D079 /* Presenter.swift in Sources */,
+				7A0BD0811CD955B10044D079 /* OnboardingViewModel.swift in Sources */,
+				7A0BD0801CD955AB0044D079 /* OnboardingWindowController.swift in Sources */,
+				7A0BD07F1CD9546C0044D079 /* KeychainWrapper.swift in Sources */,
+				7A02AF411CD820A800D9AAA9 /* BailiffTests.swift in Sources */,
+				7A02AF5F1CD8248900D9AAA9 /* OnboardingFlowSpecs.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7A82094B1CC2E592008DB4DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A0BD0841CD957830044D079 /* Presenter.swift in Sources */,
 				7AF3C4361CC5C31800F20388 /* ApplicationFlow.swift in Sources */,
 				7A371B731CCBC6860099EB13 /* OnboardingFlow.swift in Sources */,
 				7AF3C43D1CC5C60C00F20388 /* CreateIssueWindowController.swift in Sources */,
 				7A5DC4B51CC44DDC0081D982 /* OnboardingWindowController.swift in Sources */,
 				7AF3C4341CC5C02300F20388 /* OnboardingViewModel.swift in Sources */,
+				7A02AF5D1CD8237400D9AAA9 /* KeychainWrapper.swift in Sources */,
 				7A8209531CC2E592008DB4DD /* AppDelegate.swift in Sources */,
 				7AF3C4381CC5C45800F20388 /* CreateIssueFlow.swift in Sources */,
 			);
@@ -437,6 +588,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7A02AF441CD820A800D9AAA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A82094E1CC2E592008DB4DD /* Bailiff */;
+			targetProxy = 7A02AF431CD820A800D9AAA9 /* PBXContainerItemProxy */;
+		};
 		7A8209701CC2E601008DB4DD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7A8209631CC2E601008DB4DD /* Arwing */;
@@ -466,6 +622,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7A02AF451CD820A800D9AAA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = BailiffTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.BailiffTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bailiff.app/Contents/MacOS/Bailiff";
+			};
+			name = Debug;
+		};
+		7A02AF461CD820A800D9AAA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = BailiffTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.BailiffTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bailiff.app/Contents/MacOS/Bailiff";
+			};
+			name = Release;
+		};
 		7A82095A1CC2E592008DB4DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -647,6 +837,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = ArwingTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.ArwingTests";
@@ -659,6 +853,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = ArwingTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.ArwingTests";
@@ -670,6 +868,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7A02AF471CD820A800D9AAA9 /* Build configuration list for PBXNativeTarget "BailiffTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A02AF451CD820A800D9AAA9 /* Debug */,
+				7A02AF461CD820A800D9AAA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7A82094A1CC2E592008DB4DD /* Build configuration list for PBXProject "Bailiff" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

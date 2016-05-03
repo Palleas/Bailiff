@@ -13,25 +13,33 @@ import Result
 import KeychainSwift
 
 class OnboardingFlow: NSObject {
-    private let onboardingWindowController: OnboardingWindowController
-    private let onboardingViewModel = OnboardingViewModel()
+    static let PrivateKeyStorageKey = "com.perfectly-cooked.bailiff.PrivateKeyStorageKey"
+    static let EndpointStorageKey = "com.perfectly-cooked.bailiff.EndpointStorageKey"
 
-    override init() {
+    private let onboardingWindowController: OnboardingWindowController
+    private let onboardingViewModel: OnboardingViewModel
+
+    private let keychain: Keychain
+    private let presenter: Presenter
+
+    init(keychain: Keychain, presenter: Presenter, onboardingViewModel: OnboardingViewModel) {
+        self.keychain = keychain
+        self.presenter = presenter
+        self.onboardingViewModel = onboardingViewModel
+        
+        // Create the window controller
         self.onboardingWindowController = OnboardingWindowController(viewModel: onboardingViewModel)
 
         super.init()
     }
 
     func prepare() -> SignalProducer<Client, NoError> {
-        let keychain = KeychainSwift()
-        if let endPointString = keychain.get(ApplicationFlow.EndpointStorageKey), let endpoint = NSURL(string: endPointString), let token = keychain.get(ApplicationFlow.PrivateKeyStorageKey) {
+        if let endPointString = keychain.load(key: OnboardingFlow.EndpointStorageKey), let endpoint = NSURL(string: endPointString), let token = keychain.load(key: OnboardingFlow.PrivateKeyStorageKey) {
             let client = Client(provider: TokenAuthentication(token: token), endpoint: endpoint)
             return SignalProducer(value: client)
         }
 
-        onboardingWindowController.loadWindow()
-        onboardingWindowController.showWindow(nil)
-        onboardingWindowController.window?.makeKeyAndOrderFront(self)
+        presenter.present(controller: onboardingWindowController)
 
         return SignalProducer(signal: onboardingViewModel.action.values)
             .on(next: saveCredentials)
@@ -42,9 +50,9 @@ class OnboardingFlow: NSObject {
         
         // Store token
         let keychain = KeychainSwift()
-        keychain.set(client.provider.rawToken, forKey: ApplicationFlow.PrivateKeyStorageKey)
+        keychain.set(client.provider.rawToken, forKey: OnboardingFlow.PrivateKeyStorageKey)
         // Store endpoint
-        keychain.set(client.endpoint.absoluteString, forKey: ApplicationFlow.EndpointStorageKey)
+        keychain.set(client.endpoint.absoluteString, forKey: OnboardingFlow.EndpointStorageKey)
     }
 
 }
