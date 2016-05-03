@@ -10,6 +10,10 @@ import Cocoa
 import Arwing
 import ReactiveCocoa
 
+enum CreateIssueError: ErrorType {
+    case InternalError
+}
+
 class CreateIssueWindowController: NSWindowController {
 
     @IBOutlet weak var projectsContainer: NSComboBox!

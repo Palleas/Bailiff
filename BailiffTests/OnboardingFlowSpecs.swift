@@ -11,31 +11,6 @@ import Quick
 import Nimble
 
 class OnboardingFlowSpecs: QuickSpec {
-
-    class FakeKeychain: Keychain {
-        private var values: [String: String]?
-
-        init(values: [String: String]? = nil) {
-            self.values = values
-        }
-
-        func load(key key: String) -> String? {
-            return values?[key]
-        }
-
-        func save(key key: String, value: String) {
-            values?[key] = value
-        }
-    }
-
-    class CounterPresenter: Presenter {
-        private(set) var presentationCount = 0
-
-        func present(controller controller: NSWindowController) {
-            presentationCount += 1
-        }
-    }
-
     override func spec() {
         describe("The Onboarding Flow") {
             var presenter: CounterPresenter!
