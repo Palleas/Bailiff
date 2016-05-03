@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7A02AF411CD820A800D9AAA9 /* BailiffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02AF401CD820A800D9AAA9 /* BailiffTests.swift */; };
 		7A02AF481CD820BB00D9AAA9 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5DC4AE1CC2EC8B0081D982 /* SwiftyJSON.framework */; };
 		7A02AF491CD820BB00D9AAA9 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5DC4A41CC2EB3A0081D982 /* ReactiveCocoa.framework */; };
 		7A02AF4A1CD820BB00D9AAA9 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5DC4A51CC2EB3A0081D982 /* Result.framework */; };
@@ -141,7 +140,6 @@
 
 /* Begin PBXFileReference section */
 		7A02AF3E1CD820A800D9AAA9 /* BailiffTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BailiffTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A02AF401CD820A800D9AAA9 /* BailiffTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BailiffTests.swift; sourceTree = "<group>"; };
 		7A02AF421CD820A800D9AAA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A02AF4F1CD8231900D9AAA9 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		7A02AF501CD8231900D9AAA9 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/Mac/OHHTTPStubs.framework; sourceTree = "<group>"; };
@@ -230,7 +228,6 @@
 		7A02AF3F1CD820A800D9AAA9 /* BailiffTests */ = {
 			isa = PBXGroup;
 			children = (
-				7A02AF401CD820A800D9AAA9 /* BailiffTests.swift */,
 				7A02AF421CD820A800D9AAA9 /* Info.plist */,
 				7A02AF5E1CD8248900D9AAA9 /* OnboardingFlowSpecs.swift */,
 			);
@@ -548,7 +545,6 @@
 				7A0BD0811CD955B10044D079 /* OnboardingViewModel.swift in Sources */,
 				7A0BD0801CD955AB0044D079 /* OnboardingWindowController.swift in Sources */,
 				7A0BD07F1CD9546C0044D079 /* KeychainWrapper.swift in Sources */,
-				7A02AF411CD820A800D9AAA9 /* BailiffTests.swift in Sources */,
 				7A02AF5F1CD8248900D9AAA9 /* OnboardingFlowSpecs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
