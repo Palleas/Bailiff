@@ -12,14 +12,14 @@ import Arwing
 import KeychainSwift
 
 class CreateIssueFlow: NSObject {
-    private let client: Client
     private var createIssueWindowController: CreateIssueWindowController
     private let presenter: Presenter
+    private let viewModel: CreateIssueViewModel
 
     init(client: Client, presenter: Presenter) {
-        self.client = client
         self.presenter = presenter
-        self.createIssueWindowController = CreateIssueWindowController(client: client)
+        self.viewModel = CreateIssueViewModel(client: client)
+        self.createIssueWindowController = CreateIssueWindowController(viewModel: viewModel)
 
         super.init()
     }

@@ -36,9 +36,13 @@
 		7A0BD08D1CD961C90044D079 /* CreateIssueFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF3C4371CC5C45800F20388 /* CreateIssueFlow.swift */; };
 		7A0BD08E1CD961CE0044D079 /* CreateIssueWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF3C43B1CC5C60C00F20388 /* CreateIssueWindowController.swift */; };
 		7A0BD0901CD962CF0044D079 /* CreateIssueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0BD08F1CD962CF0044D079 /* CreateIssueViewModel.swift */; };
+		7A0BD0911CD97FE60044D079 /* CreateIssueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0BD08F1CD962CF0044D079 /* CreateIssueViewModel.swift */; };
 		7A30EA1F1CD3C5F800D37C51 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A30EA1C1CD3C5F500D37C51 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7A30EA201CD3C60200D37C51 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A30EA1C1CD3C5F500D37C51 /* Sparkle.framework */; };
 		7A30EA211CD3C60D00D37C51 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A30EA1C1CD3C5F500D37C51 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A30F6CA1CDBFE1B00B5CFFD /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A30F6C91CDBFE1B00B5CFFD /* Issue.swift */; };
+		7A30F6CB1CDBFE1F00B5CFFD /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A30F6C91CDBFE1B00B5CFFD /* Issue.swift */; };
+		7A30F6CD1CDBFE3C00B5CFFD /* IssueSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A30F6CC1CDBFE3C00B5CFFD /* IssueSpecs.swift */; };
 		7A371B731CCBC6860099EB13 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A371B721CCBC6860099EB13 /* OnboardingFlow.swift */; };
 		7A5DC4A81CC2EB400081D982 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5DC4A41CC2EB3A0081D982 /* ReactiveCocoa.framework */; };
 		7A5DC4A91CC2EB400081D982 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5DC4A51CC2EB3A0081D982 /* Result.framework */; };
@@ -158,6 +162,8 @@
 		7A0BD08B1CD960DF0044D079 /* CounterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterPresenter.swift; sourceTree = "<group>"; };
 		7A0BD08F1CD962CF0044D079 /* CreateIssueViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateIssueViewModel.swift; sourceTree = "<group>"; };
 		7A30EA1C1CD3C5F500D37C51 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		7A30F6C91CDBFE1B00B5CFFD /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
+		7A30F6CC1CDBFE3C00B5CFFD /* IssueSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueSpecs.swift; sourceTree = "<group>"; };
 		7A371B721CCBC6860099EB13 /* OnboardingFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
 		7A5DC4A41CC2EB3A0081D982 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		7A5DC4A51CC2EB3A0081D982 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
@@ -242,6 +248,7 @@
 				7A02AF421CD820A800D9AAA9 /* Info.plist */,
 				7A02AF5E1CD8248900D9AAA9 /* OnboardingFlowSpecs.swift */,
 				7A0BD0861CD95FD90044D079 /* CreateIssueFlowSpecs.swift */,
+				7A30F6CC1CDBFE3C00B5CFFD /* IssueSpecs.swift */,
 			);
 			path = BailiffTests;
 			sourceTree = "<group>";
@@ -250,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				7A02AF5C1CD8237400D9AAA9 /* KeychainWrapper.swift */,
+				7A30F6C91CDBFE1B00B5CFFD /* Issue.swift */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -565,13 +573,16 @@
 				7A0BD08A1CD960C30044D079 /* FakeKeychain.swift in Sources */,
 				7A0BD0871CD95FD90044D079 /* CreateIssueFlowSpecs.swift in Sources */,
 				7A0BD08C1CD960DF0044D079 /* CounterPresenter.swift in Sources */,
+				7A30F6CB1CDBFE1F00B5CFFD /* Issue.swift in Sources */,
 				7A0BD08E1CD961CE0044D079 /* CreateIssueWindowController.swift in Sources */,
 				7A02AF601CD8269600D9AAA9 /* OnboardingFlow.swift in Sources */,
 				7A0BD0851CD957F00044D079 /* Presenter.swift in Sources */,
+				7A0BD0911CD97FE60044D079 /* CreateIssueViewModel.swift in Sources */,
 				7A0BD0811CD955B10044D079 /* OnboardingViewModel.swift in Sources */,
 				7A0BD0801CD955AB0044D079 /* OnboardingWindowController.swift in Sources */,
 				7A0BD07F1CD9546C0044D079 /* KeychainWrapper.swift in Sources */,
 				7A02AF5F1CD8248900D9AAA9 /* OnboardingFlowSpecs.swift in Sources */,
+				7A30F6CD1CDBFE3C00B5CFFD /* IssueSpecs.swift in Sources */,
 				7A0BD08D1CD961C90044D079 /* CreateIssueFlow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -581,6 +592,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A0BD0841CD957830044D079 /* Presenter.swift in Sources */,
+				7A30F6CA1CDBFE1B00B5CFFD /* Issue.swift in Sources */,
 				7AF3C4361CC5C31800F20388 /* ApplicationFlow.swift in Sources */,
 				7A371B731CCBC6860099EB13 /* OnboardingFlow.swift in Sources */,
 				7AF3C43D1CC5C60C00F20388 /* CreateIssueWindowController.swift in Sources */,

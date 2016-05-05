@@ -35,7 +35,7 @@ class OnboardingFlowSpecs: QuickSpec {
                             expect(client).toNot(beNil())
                             // An it should not have presented a window
                             // as it's invisible to the user
-                            expect(presenter.presentationCount).to(equal(0))
+                            expect(presenter.presentationCount.value).to(equal(0))
 
                             done()
                         })
@@ -57,7 +57,7 @@ class OnboardingFlowSpecs: QuickSpec {
 
                             // it should have presented a window
                             // as it's invisible to the user
-                            expect(presenter.presentationCount).to(equal(1))
+                            expect(presenter.presentationCount.value).to(equal(1))
 
                             done()
                         })
@@ -78,7 +78,7 @@ class OnboardingFlowSpecs: QuickSpec {
                         flow.prepare().startWithNext({ (client) in
                             // An it should have presented a window
                             // as it's invisible to the user
-                            expect(presenter.presentationCount).to(equal(1))
+                            expect(presenter.presentationCount.value).to(equal(1))
 
                             done()
                         })
@@ -99,7 +99,7 @@ class OnboardingFlowSpecs: QuickSpec {
                         flow.prepare().startWithNext({ (client) in
                             // An it should have presented a window
                             // as it's invisible to the user
-                            expect(presenter.presentationCount).to(equal(1))
+                            expect(presenter.presentationCount.value).to(equal(1))
 
                             done()
                         })

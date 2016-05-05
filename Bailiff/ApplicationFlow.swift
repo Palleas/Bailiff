@@ -43,7 +43,9 @@ class ApplicationFlow: NSObject {
     }
 
     func didSelectCreateIssue() {
-        let createIssueFlow = CreateIssueFlow(client: client.value!, presenter: presenter)
+        guard let client = client.value else { return }
+
+        let createIssueFlow = CreateIssueFlow(client: client, presenter: presenter)
         createIssueFlow.prepare().start()
         self.createIssueFlow = createIssueFlow
     }

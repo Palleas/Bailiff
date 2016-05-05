@@ -7,11 +7,12 @@
 //
 
 import Cocoa
+import ReactiveCocoa
 
 class CounterPresenter: Presenter {
-    private(set) var presentationCount = 0
+    private(set) var presentationCount = MutableProperty(0)
 
     func present(controller controller: NSWindowController) {
-        presentationCount += 1
+        presentationCount.value += 1
     }
 }
