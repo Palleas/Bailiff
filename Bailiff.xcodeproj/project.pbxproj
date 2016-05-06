@@ -43,6 +43,7 @@
 		7A30F6CA1CDBFE1B00B5CFFD /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A30F6C91CDBFE1B00B5CFFD /* Issue.swift */; };
 		7A30F6CB1CDBFE1F00B5CFFD /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A30F6C91CDBFE1B00B5CFFD /* Issue.swift */; };
 		7A30F6CD1CDBFE3C00B5CFFD /* IssueSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A30F6CC1CDBFE3C00B5CFFD /* IssueSpecs.swift */; };
+		7A30F6CF1CDC07B900B5CFFD /* CreateIssueViewModelSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A30F6CE1CDC07B900B5CFFD /* CreateIssueViewModelSpecs.swift */; };
 		7A371B731CCBC6860099EB13 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A371B721CCBC6860099EB13 /* OnboardingFlow.swift */; };
 		7A5DC4A81CC2EB400081D982 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5DC4A41CC2EB3A0081D982 /* ReactiveCocoa.framework */; };
 		7A5DC4A91CC2EB400081D982 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5DC4A51CC2EB3A0081D982 /* Result.framework */; };
@@ -164,6 +165,7 @@
 		7A30EA1C1CD3C5F500D37C51 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		7A30F6C91CDBFE1B00B5CFFD /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		7A30F6CC1CDBFE3C00B5CFFD /* IssueSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueSpecs.swift; sourceTree = "<group>"; };
+		7A30F6CE1CDC07B900B5CFFD /* CreateIssueViewModelSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateIssueViewModelSpecs.swift; sourceTree = "<group>"; };
 		7A371B721CCBC6860099EB13 /* OnboardingFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
 		7A5DC4A41CC2EB3A0081D982 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		7A5DC4A51CC2EB3A0081D982 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				7A02AF5E1CD8248900D9AAA9 /* OnboardingFlowSpecs.swift */,
 				7A0BD0861CD95FD90044D079 /* CreateIssueFlowSpecs.swift */,
 				7A30F6CC1CDBFE3C00B5CFFD /* IssueSpecs.swift */,
+				7A30F6CE1CDC07B900B5CFFD /* CreateIssueViewModelSpecs.swift */,
 			);
 			path = BailiffTests;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				7A02AF601CD8269600D9AAA9 /* OnboardingFlow.swift in Sources */,
 				7A0BD0851CD957F00044D079 /* Presenter.swift in Sources */,
 				7A0BD0911CD97FE60044D079 /* CreateIssueViewModel.swift in Sources */,
+				7A30F6CF1CDC07B900B5CFFD /* CreateIssueViewModelSpecs.swift in Sources */,
 				7A0BD0811CD955B10044D079 /* OnboardingViewModel.swift in Sources */,
 				7A0BD0801CD955AB0044D079 /* OnboardingWindowController.swift in Sources */,
 				7A0BD07F1CD9546C0044D079 /* KeychainWrapper.swift in Sources */,
