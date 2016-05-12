@@ -25,6 +25,12 @@ public struct Project {
         self.name = payload["name"].stringValue
         self.nameWithNamespace = payload["name_with_namespace"].stringValue
     }
+
+    public init(id: Int, name: String, nameWithNamespace: String) {
+        self.id = id
+        self.name = name
+        self.nameWithNamespace = nameWithNamespace
+    }
 }
 
 public struct Issue {

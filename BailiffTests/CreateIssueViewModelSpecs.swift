@@ -15,14 +15,21 @@ class CreateIssueViewModelSpecs: QuickSpec {
 
     override func spec() {
         describe("The view model exposed to the create issue flow") {
-            var client: Client!
+            var staticIssueController: IssueController!
 
             beforeEach {
-                client = Client(provider: TokenAuthentication(token: "private-key"), endpoint: NSURL(string: "http://gitlab.compamy.com")!)
+                staticIssueController = StaticIssueController(count: 5)
             }
 
-            it("should expose an error when the content is invalid") {
-                let viewModel = CreateIssueViewModel(client: client)
+            it("should fetch the projects") {
+                let viewModel = CreateIssueViewModel(issueController: staticIssueController)
+
+                waitUntil(timeout: 5) { done in
+                    viewModel.projects.producer.skip(1).startWithNext { projects in
+                        expect(projects.count).to(equal(5))
+                        done()
+                    }
+                }
             }
         }
     }

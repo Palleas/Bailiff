@@ -26,7 +26,7 @@ class CreateIssueFlowSpecs: QuickSpec {
 
             context("User starts creating an issue") {
                 it("should present the window") {
-                    let flow = CreateIssueFlow(client: client, presenter: presenter)
+                    let flow = CreateIssueFlow(issueController: StaticIssueController(count: 5), presenter: presenter)
                     waitUntil() { done in
 
                         presenter.presentationCount.producer.skip(1).startWithNext() { presentationCount in

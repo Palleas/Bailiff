@@ -10,10 +10,6 @@ import Cocoa
 import Arwing
 import ReactiveCocoa
 
-enum CreateIssueError: ErrorType {
-    case InternalError
-}
-
 class CreateIssueWindowController: NSWindowController {
 
     @IBOutlet weak var projectsContainer: NSComboBox!
@@ -43,6 +39,9 @@ class CreateIssueWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
 
+        viewModel.projects.producer.startWithNext { [weak self] projects in
+            self?.projectsContainer.reloadData()
+        }
 //        client
 //            .projects()
 //            .collect()
@@ -100,10 +99,10 @@ class CreateIssueWindowController: NSWindowController {
 
 extension CreateIssueWindowController: NSComboBoxDataSource {
     func comboBox(aComboBox: NSComboBox, objectValueForItemAtIndex index: Int) -> AnyObject {
-        return projects[index].nameWithNamespace
+        return viewModel.projects.value[index].nameWithNamespace
     }
 
     func numberOfItemsInComboBox(aComboBox: NSComboBox) -> Int {
-        return projects.count
+        return viewModel.projects.value.count
     }
 }

@@ -18,20 +18,30 @@ class CreateIssueViewModel {
     let selectedProject = MutableProperty<Project?>(nil)
     let issueContent = MutableProperty<String?>(nil)
     let createdIssue = MutableProperty<Issue?>(nil)
-    let issueCreationError = MutableProperty<CreateIssueError?>(nil)
+    let issueCreationError = MutableProperty<IssueError?>(nil)
     
-    private let client: Client
-    init(client: Client) {
-        self.client = client
+    private let issueController: IssueController
+    init(issueController: IssueController) {
+        self.issueController = issueController
 
-        projects <~ client.projects().collect().flatMapError({ _ in SignalProducer<[Project], NoError>(value: []) })
+        projects.signal.observeNext { value in print("Projects now conains \(value.count) projects") }
+
+        let projectsSignalProducer = issueController.projects().collect().flatMapError { (error: IssueError) -> SignalProducer<[Project], NoError> in
+            return SignalProducer<[Project], NoError>(value: [])
+        }
+        
+//        projectsSignalProducer.startWithNext { projects in
+//            self.projects.value = projects
+//        }
+
+
+        projects <~ projectsSignalProducer
 
         selectedProject.producer.ignoreNil().zipWith(issueContent.producer.ignoreNil())
-            .promoteErrors(CreateIssueError.self)
-            .flatMap(.Latest, transform: { (project, string) -> SignalProducer<Issue, CreateIssueError> in
-                return self.client
-                    .createIssue(project, title: "My Issue", description: "Content")
-                    .mapError { _ in CreateIssueError.InternalError }
+            .promoteErrors(IssueError.self)
+            .flatMap(.Latest, transform: { (project, string) -> SignalProducer<Issue, IssueError> in
+                let (title, description) = extractIssueInfo(content: string)
+                return self.issueController.createIssue(project, title: title, description: description ?? "")
             })
             .on(failed: { [weak self] error in
                 self?.issueCreationError.value = error

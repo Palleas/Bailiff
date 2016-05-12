@@ -16,9 +16,9 @@ class CreateIssueFlow: NSObject {
     private let presenter: Presenter
     private let viewModel: CreateIssueViewModel
 
-    init(client: Client, presenter: Presenter) {
+    init(issueController: IssueController, presenter: Presenter) {
         self.presenter = presenter
-        self.viewModel = CreateIssueViewModel(client: client)
+        self.viewModel = CreateIssueViewModel(issueController: issueController)
         self.createIssueWindowController = CreateIssueWindowController(viewModel: viewModel)
 
         super.init()
