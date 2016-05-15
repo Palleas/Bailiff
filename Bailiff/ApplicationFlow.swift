@@ -28,6 +28,7 @@ class ApplicationFlow: NSObject {
             guard let strongSelf = self else { return }
             
             strongSelf.statusBarItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
+            strongSelf.statusBarItem?.image = NSImage(named: "logo-menu")
             strongSelf.statusBarItem?.menu = strongSelf.buildMenu()
         }
     }
