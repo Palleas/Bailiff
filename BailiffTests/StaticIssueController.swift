@@ -34,7 +34,7 @@ class StaticIssueController: IssueController {
         }
     }
 
-    func createIssue(project: Project, title: String, description: String) -> SignalProducer<Issue, IssueError> {
+    func createIssue(project: Project, title: String, description: String?) -> SignalProducer<Issue, IssueError> {
         return SignalProducer.empty
     }
 }
