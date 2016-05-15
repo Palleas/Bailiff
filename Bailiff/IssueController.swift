@@ -15,7 +15,7 @@ enum IssueError: ErrorType {
 }
 
 protocol IssueController {
-    func createIssue(project: Project, title: String, description: String) -> SignalProducer<Issue, IssueError>
+    func createIssue(project: Project, title: String, description: String?) -> SignalProducer<Issue, IssueError>
     func projects() -> SignalProducer<Project, IssueError>
 }
 
@@ -27,9 +27,9 @@ class BailiffIssueController: IssueController{
         self.client = client
     }
 
-    func createIssue(project: Project, title: String, description: String) -> SignalProducer<Issue, IssueError> {
+    func createIssue(project: Project, title: String, description: String?) -> SignalProducer<Issue, IssueError> {
         return client
-            .createIssue(project, title: title, description: description)
+            .createIssue(project, title: title, description: description ?? "")
             .mapError { error in return IssueError.ClientError(underlyingError: error) }
 
     }

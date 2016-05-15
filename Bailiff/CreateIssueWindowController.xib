@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="CreateIssueWindowController" customModule="Bailiff" customModuleProvider="target">
             <connections>
                 <outlet property="contentField" destination="LE3-6d-95O" id="kcO-bd-IhI"/>
+                <outlet property="createButton" destination="j4J-X7-RYZ" id="aCH-jU-mle"/>
                 <outlet property="projectsContainer" destination="KVc-c3-eBu" id="U77-zB-mK6"/>
                 <outlet property="window" destination="QlN-Ak-ekI" id="Jcb-ng-N4s"/>
             </connections>
@@ -60,9 +61,6 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
-                        <connections>
-                            <action selector="createIssue:" target="-2" id="Qn5-1E-nl8"/>
-                        </connections>
                     </button>
                     <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KVc-c3-eBu">
                         <rect key="frame" x="20" y="203" width="443" height="26"/>
@@ -73,6 +71,7 @@
                         </comboBoxCell>
                         <connections>
                             <outlet property="dataSource" destination="-2" id="r06-fU-17P"/>
+                            <outlet property="delegate" destination="-2" id="D30-cr-y7q"/>
                         </connections>
                     </comboBox>
                 </subviews>

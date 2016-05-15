@@ -11,6 +11,7 @@ import Quick
 import Nimble
 import Arwing
 
+
 class CreateIssueViewModelSpecs: QuickSpec {
 
     override func spec() {
@@ -30,6 +31,22 @@ class CreateIssueViewModelSpecs: QuickSpec {
                         done()
                     }
                 }
+            }
+
+            it("should create an issue") {
+
+            }
+
+            it("should bind an error") {
+                let error = NSError(domain: NSURLErrorDomain, code: NSURLError.TimedOut.rawValue, userInfo: nil)
+                let clientError = ClientError.InternalError(error)
+                let lol = IssueError.ClientError(underlyingError: clientError)
+
+                let viewModel = CreateIssueViewModel(issueController: ErroringIssueController(error:  lol))
+                waitUntil { done in
+                    
+                }
+
             }
         }
     }

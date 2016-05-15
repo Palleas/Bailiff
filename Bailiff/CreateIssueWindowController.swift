@@ -9,17 +9,21 @@
 import Cocoa
 import Arwing
 import ReactiveCocoa
+import Result
 
 class CreateIssueWindowController: NSWindowController {
 
     @IBOutlet weak var projectsContainer: NSComboBox!
     @IBOutlet var contentField: NSTextView!
+    @IBOutlet weak var createButton: NSButton!
 
     private var projects = [Project]()
     private let viewModel: CreateIssueViewModel
+    private let createAction: CocoaAction
 
     init(viewModel: CreateIssueViewModel) {
         self.viewModel = viewModel
+        self.createAction = CocoaAction(viewModel.createIssueAction, { _ in return () })
 
         super.init(window: nil)
     }
@@ -40,62 +44,37 @@ class CreateIssueWindowController: NSWindowController {
         super.windowDidLoad()
 
         viewModel.projects.producer.startWithNext { [weak self] projects in
+            print("Fetched projects: \(projects)")
             self?.projectsContainer.reloadData()
         }
-//        client
-//            .projects()
-//            .collect()
-//            .observeOn(UIScheduler())
-//            .on(failed: { error in
-//                switch error {
-//                case .InternalError(let error):
-//                    NSApp.presentError(error)
-//                }
-//            })
-//            .startWithNext() { [weak self] projects in
-//                self?.projects = projects
-//                self?.projectsContainer.reloadData()
-//            }
-    }
 
-    @IBAction func createIssue(sender: AnyObject) {
-//        let selectedProject = projectsContainer.indexOfSelectedItem
-//        guard (0..<projects.count).contains(selectedProject) else {
-//            print("No project selected: abort")
-//            return
-//        }
+        createButton.target = createAction
+        createButton.action = CocoaAction.selector
 
-//        guard let content = contentField.string else {
-//            print("No content in field: abort")
-//            return
-//        }
+        viewModel.createIssueAction.events.observeOn(UIScheduler()).observeNext { [weak self] event in
+            guard let window = self?.window else { return }
 
-//        let lines = content.characters.split { $0 == "\n" }.map(String.init)
-//        let title = lines.first!
-//        let description = lines[1..<lines.count].joinWithSeparator("\n")
+            switch event {
+            case .Next(let createdIssue):
+                let alert = NSAlert()
+                alert.alertStyle = .InformationalAlertStyle
+                alert.informativeText = "Issue #\(createdIssue.iid) has been successfully created!"
+                alert.addButtonWithTitle("OK")
+                alert.beginSheetModalForWindow(window) { _ in
+                    self?.close()
+                }
+            case .Failed(_):
+                print("Oops")
+            default: break
+            }
+        }
 
-//        client
-//            .createIssue(projects[selectedProject], title: title, description: description)
-//            .observeOn(UIScheduler())
-//            .on(failed: { error in
-//                switch error {
-//                case .InternalError(let error):
-//                    NSApp.presentError(error)
-//                }
-//            })
-//            .startWithNext { [weak self] createdIssue in
-//                guard let window = self?.window else { return }
-//
-//                let alert = NSAlert()
-//                alert.alertStyle = .InformationalAlertStyle
-//                alert.informativeText = "Issue #\(createdIssue.iid) has been successfully created!"
-//                alert.addButtonWithTitle("OK")
-//                alert.beginSheetModalForWindow(window, completionHandler: nil)
-//            }
+        viewModel.issueContent <~ contentField.rac_textSignal()
+            .toSignalProducer()
+            .map { $0 as! String }
+            .flatMapError { _ in return SignalProducer<String, NoError>.empty }
     }
 }
-
-//extension 
 
 extension CreateIssueWindowController: NSComboBoxDataSource {
     func comboBox(aComboBox: NSComboBox, objectValueForItemAtIndex index: Int) -> AnyObject {
@@ -104,5 +83,11 @@ extension CreateIssueWindowController: NSComboBoxDataSource {
 
     func numberOfItemsInComboBox(aComboBox: NSComboBox) -> Int {
         return viewModel.projects.value.count
+    }
+}
+
+extension CreateIssueWindowController: NSComboBoxDelegate {
+    func comboBoxSelectionDidChange(notification: NSNotification) {
+        viewModel.selectedProjectIndex.value = projectsContainer.indexOfSelectedItem
     }
 }

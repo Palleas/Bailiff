@@ -69,6 +69,7 @@
 		7ABAF5B81CC6FB0C00B4C69E /* KeychainSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7ABAF5B61CC6FB0C00B4C69E /* KeychainSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7ABD83A91CE13FEA00F3493D /* IssueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A30F6D11CE13E9500B5CFFD /* IssueController.swift */; };
 		7ABD83AB1CE1424A00F3493D /* StaticIssueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABD83AA1CE1424A00F3493D /* StaticIssueController.swift */; };
+		7AD463C21CE4032F00E34E1A /* ErroringIssueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD463C11CE4032F00E34E1A /* ErroringIssueController.swift */; };
 		7AF3C4341CC5C02300F20388 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF3C4331CC5C02300F20388 /* OnboardingViewModel.swift */; };
 		7AF3C4361CC5C31800F20388 /* ApplicationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF3C4351CC5C31800F20388 /* ApplicationFlow.swift */; };
 		7AF3C4381CC5C45800F20388 /* CreateIssueFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF3C4371CC5C45800F20388 /* CreateIssueFlow.swift */; };
@@ -190,6 +191,7 @@
 		7A8209821CC2E61A008DB4DD /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		7ABAF5B61CC6FB0C00B4C69E /* KeychainSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainSwift.framework; path = Carthage/Build/Mac/KeychainSwift.framework; sourceTree = "<group>"; };
 		7ABD83AA1CE1424A00F3493D /* StaticIssueController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticIssueController.swift; sourceTree = "<group>"; };
+		7AD463C11CE4032F00E34E1A /* ErroringIssueController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErroringIssueController.swift; sourceTree = "<group>"; };
 		7AF3C4331CC5C02300F20388 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		7AF3C4351CC5C31800F20388 /* ApplicationFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationFlow.swift; sourceTree = "<group>"; };
 		7AF3C4371CC5C45800F20388 /* CreateIssueFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateIssueFlow.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				7A0BD0891CD960C30044D079 /* FakeKeychain.swift */,
 				7A0BD08B1CD960DF0044D079 /* CounterPresenter.swift */,
 				7ABD83AA1CE1424A00F3493D /* StaticIssueController.swift */,
+				7AD463C11CE4032F00E34E1A /* ErroringIssueController.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 				7A30F6CF1CDC07B900B5CFFD /* CreateIssueViewModelSpecs.swift in Sources */,
 				7ABD83AB1CE1424A00F3493D /* StaticIssueController.swift in Sources */,
 				7A0BD0811CD955B10044D079 /* OnboardingViewModel.swift in Sources */,
+				7AD463C21CE4032F00E34E1A /* ErroringIssueController.swift in Sources */,
 				7A0BD0801CD955AB0044D079 /* OnboardingWindowController.swift in Sources */,
 				7A0BD07F1CD9546C0044D079 /* KeychainWrapper.swift in Sources */,
 				7A02AF5F1CD8248900D9AAA9 /* OnboardingFlowSpecs.swift in Sources */,
