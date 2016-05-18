@@ -17,11 +17,9 @@ class CreateIssueFlowSpecs: QuickSpec {
     override func spec() {
         describe("The onboarding flow spec") {
             var presenter: CounterPresenter!
-            var client: Client!
 
             beforeEach() {
                 presenter = CounterPresenter()
-                client = Client(provider: TokenAuthentication(token: "private-key"), endpoint: NSURL(string: "http://gitlab.company.com")!)
             }
 
             context("User starts creating an issue") {
